@@ -1,3 +1,4 @@
+
 name: Build BungeeCord
 
 on:
@@ -12,9 +13,16 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      - name: Build BungeeCord
+      - name: Checkout BungeeCord
+        uses: actions/checkout@v4
+        with:
+          repository: SpigotMC/BungeeCord
+          path: source
+      - name: Build
         run: |
-          git clone https://github.com/SpigotMC/BungeeCord.git source
           cd source
-          chmod +x ./mvnw
-          ./mvnw -B package
+          mvn -B package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BungeeCord
+          path: source/bootstrap/target/*.jar
