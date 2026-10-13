@@ -1,0 +1,5 @@
+BungeeCord構成スターター
+
+これは設定テンプレートです。実行可能なBungeeCord.jarやEaglercraft対応プロキシ本体は含みません。GitHubだけでBungeeCordを常時起動し、接続用IPを提供することはできません。実際に公開するにはJavaを常時実行できるサーバー環境が必要です。通常のBungeeCordだけではEaglercraft接続に対応しない場合があります。
+
+config.ymlのservers.lobby.addressを実際のバックエンドIP:ポートに変更してください。バックエンドをプロキシ経由に限定し、ファイアウォールを設定してください。
